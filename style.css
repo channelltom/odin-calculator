@@ -2,5 +2,16 @@
 
 body {
   display: flex;
+  flex-direction: column;
   font-family: "Hedvig Letters Sans", sans-serif;
+}
+
+#heading-container {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+}
+
+.btn {
+  padding: 5px;
 }
