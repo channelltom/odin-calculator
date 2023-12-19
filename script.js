@@ -21,13 +21,13 @@ const divide = function (val1, val2) {
 
 const operate = function (operator, value1, value2) {
   if (operator === "+") {
-    return add(parseInt(value1), parseInt(value2));
+    return add(value1, value2);
   } else if (operator === "-") {
-    return subtract(parseInt(value1), parseInt(value2));
+    return subtract(value1, value2);
   } else if (operator === "x") {
-    return multiply(parseInt(value1), parseInt(value2));
+    return multiply(value1, value2);
   } else if (operator === "÷") {
-    return divide(parseInt(value1), parseInt(value2));
+    return divide(value1, value2);
   }
 };
 
@@ -37,6 +37,7 @@ const primaryField = document.querySelector(".input");
 const secondaryField = document.querySelector(".result");
 const clrBtn = document.querySelector("#clear");
 const eqBtn = document.querySelector("#equals");
+const backBtn = document.querySelector("#back");
 
 var newEquation = false;
 
@@ -64,10 +65,20 @@ clrBtn.addEventListener("click", () => {
   secondaryField.textContent = "";
 });
 
+backBtn.addEventListener("click", () => {
+  fieldContents = primaryField.textContent.split("");
+  fieldContents.pop();
+  primaryField.textContent = fieldContents.join("");
+});
+
 function onEqBtnPress() {
   oper2 = primaryField.textContent;
   if (oper1 !== null && oper2 !== null && currentOperator !== null) {
-    var sumResult = operate(currentOperator, oper1, oper2);
+    var sumResult = operate(
+      currentOperator,
+      parseFloat(oper1),
+      parseFloat(oper2),
+    );
     secondaryField.textContent += " " + oper2 + " " + "=";
     primaryField.textContent = sumResult;
     oper1 = null;

@@ -51,13 +51,14 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
   align-items: center;
 }
 
 .btn {
   font-size: 20px;
-  color: hsl(230, 50%, 70%);
+  color: hsl(230, 50%, 80%);
   align-items: center;
   justify-content: center;
   border: 0px solid;
@@ -65,14 +66,17 @@ body {
   background-color: hsl(230, 30%, 30%);
   box-shadow:
     0 4px 8px hsl(230, 30%, 25%),
-    0 6px 10px hsl(230, 30%, 25%);
+    -4px -4px 8px hsl(230, 30%, 35%);
   width: 20%;
   height: 20%;
   padding: 20px;
-  margin: 3px;
 }
 
 .btn:hover {
   background-color: hsl(230, 30%, 40%);
   transition: 0.5s;
+}
+
+.footer {
+  color: hsl(230, 20%, 60%);
 }
